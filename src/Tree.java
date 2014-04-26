@@ -6,7 +6,7 @@ public class Tree {
 
 	public int value;
 	public Tree lson;
-	public Tree sybling;
+	public Tree sibling;
 
 	public Tree(int value) {
 		this.value = value;
@@ -18,18 +18,18 @@ public class Tree {
 		// left branch
 		t.lson = new Tree(8);
 		t.lson.lson = new Tree(16);
-		t.lson.lson.sybling = new Tree(5);
-		t.lson.lson.sybling.sybling = new Tree(1);
+		t.lson.lson.sibling = new Tree(5);
+		t.lson.lson.sibling.sibling = new Tree(1);
 		// middle branch
-		t.lson.sybling = new Tree(12);
-		t.lson.sybling.lson = new Tree(13);
-		t.lson.sybling.lson.sybling = new Tree(9);
+		t.lson.sibling = new Tree(12);
+		t.lson.sibling.lson = new Tree(13);
+		t.lson.sibling.lson.sibling = new Tree(9);
 		// free standing leaf
-		t.lson.sybling.sybling = new Tree(17);
+		t.lson.sibling.sibling = new Tree(17);
 		// right most branch
-		t.lson.sybling.sybling.sybling = new Tree(3);
-		t.lson.sybling.sybling.sybling.lson = new Tree(7);
-		t.lson.sybling.sybling.sybling.lson.sybling = new Tree(11);
+		t.lson.sibling.sibling.sibling = new Tree(3);
+		t.lson.sibling.sibling.sibling.lson = new Tree(7);
+		t.lson.sibling.sibling.sibling.lson.sibling = new Tree(11);
 
 		return t;
 
@@ -44,8 +44,8 @@ public class Tree {
 	    if (tree.lson != null){
 	    	walk_tree(tree.lson);
 	    }
-	    if (tree.sybling != null) {
-	    	walk_tree(tree.sybling);
+	    if (tree.sibling != null) {
+	    	walk_tree(tree.sibling);
 	    }
 	    return tree;
 	}
@@ -62,7 +62,7 @@ public class Tree {
 		System.out.println(tree.value);
 		System.out.println(tree.lson.value);
 		System.out.println(tree.lson.lson.value);
-		System.out.println(tree.lson.lson.sybling.value);
+		System.out.println(tree.lson.lson.sibling.value);
 		*/
 		walk_tree(tree);
 	}
